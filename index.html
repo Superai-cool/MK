@@ -45,6 +45,7 @@
     .mobile a{display:block;padding:16px;font-size:16px;border-bottom:1px solid var(--border);color:var(--sub)}
     .mobile a:hover{background:var(--muted);color:var(--brand)}
 
+    /* Hero */
     .hero{padding:60px 0}
     .hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
     .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff8a0;color:#5a4700;font-weight:500;border:1px solid #ffe877}
@@ -55,49 +56,42 @@
     .btn:hover{transform:translateY(-3px);background:var(--brand-2)}
     .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)}
     .btn.ghost:hover{background:#fffce0}
-    .btn.swiggy{background:#fc8019;border-color:#fc8019;color:#fff}.btn.zomato{background:#e23744;border-color:#e23744;color:#fff}
+    .btn.swiggy{background:#fc8019;border-color:#fc8019;color:#fff}
+    .btn.zomato{background:#e23744;border-color:#e23744;color:#fff}
 
     .hero-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow)}
     .hero-img{aspect-ratio:4/3;border-radius:14px;overflow:hidden}
+    .hero-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      border-radius:14px;
+    }
 
     section{padding:60px 0}
     .section-title{font-size:clamp(22px,3.4vw,34px);margin-bottom:12px;color:#4a3a00;text-align:center}
     .section-sub{text-align:center;color:var(--sub);margin-bottom:24px}
 
-    /* --- Updated About Us layout --- */
-    .about {
-      max-width:1000px;
-      margin-inline:auto;
-      text-align:left;
-      line-height:1.8;
-      padding:20px 0;
-    }
+    /* About */
+    .about{max-width:1000px;margin-inline:auto;text-align:left;line-height:1.8;padding:20px 0}
     .about p{margin-bottom:1rem;font-weight:400;color:var(--sub);}
-    .about .section-title, .about .section-sub{text-align:left;}
-    .founder{
-      margin-top:2rem;
-      display:flex;
-      align-items:center;
-      gap:24px;
-      justify-content:flex-start;
-      flex-wrap:wrap;
+    .about .section-title,.about .section-sub{text-align:left;}
+    .founder{margin-top:2rem;display:flex;align-items:center;gap:24px;justify-content:flex-start;flex-wrap:wrap;}
+    .founder img{
+      width:140px;
+      height:180px;
+      object-fit:cover;
+      border-radius:12px;
+      border:3px solid var(--brand);
+      background:#fff;
+      padding:3px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
- .founder img {
-  width: 140px;
-  height: 180px;
-  object-fit: cover;             /* keeps full portrait proportion */
-  border-radius: 12px;           /* rounded rectangle */
-  border: 3px solid var(--brand);
-  background: #fff;
-  padding: 3px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-
     .founder-message{max-width:600px;text-align:left;color:var(--sub);}
     .founder-message h3{margin-bottom:6px;color:#4a3a00;font-weight:600;}
 
-    /* Menu Section */
+    /* Menu */
     .filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px}
     .filter{padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;font-weight:500;color:var(--sub);cursor:pointer;transition:.25s}
     .filter.active,.filter:hover{background:#fff44f;color:#4a3a00;border-color:#e6be00}
@@ -108,44 +102,34 @@
     .menu-card div[style]{line-height:1.5}
     .price{margin-left:auto;font-weight:700;color:#4a3a00}
 
-    /* Contact Section */
-    #contact .section-title, #contact .section-sub {text-align:left;}
-    .contact-wrap {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      align-items:start;
-    }
-    .contact-info {
-      background:#fffef7;
-      padding:20px;
-      border-radius:16px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.05);
-      text-align:left;
-    }
-    .contact-info p {margin-bottom:10px;line-height:1.7;}
+    /* Contact */
+    #contact .section-title,#contact .section-sub{text-align:left;}
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+    .contact-info{background:#fffef7;padding:20px;border-radius:16px;box-shadow:0 5px 20px rgba(0,0,0,0.05);text-align:left;}
+    .contact-info p{margin-bottom:10px;line-height:1.7;}
     @media(max-width:768px){.contact-wrap{grid-template-columns:1fr}}
 
     footer{border-top:1px solid var(--border);background:#fff;padding:26px 0;text-align:center;color:var(--sub)}
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 100;
-      transition: transform 0.3s ease;
+    /* WhatsApp */
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background-color:#25D366;
+      color:white;
+      border-radius:50%;
+      width:60px;
+      height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+      z-index:100;
+      transition:transform 0.3s ease;
     }
-    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float:hover{transform:scale(1.1)}
 
     @media(max-width:1024px){.hero-wrap{grid-template-columns:1fr}.menu-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:680px){.menu-grid{grid-template-columns:1fr}.hero-wrap{padding:34px 0}section{padding:44px 0}}
@@ -185,7 +169,11 @@
         <a class="btn ghost" href="#menu">View Menu</a>
       </div>
     </div>
-    <aside class="hero-card"><div class="hero-img"><img src="images/hero-coastal.jpg" alt="Coastal ambience"></div></aside>
+    <aside class="hero-card">
+      <div class="hero-img">
+        <img src="images/hero-coastal.jpg" alt="Coastal ambience">
+      </div>
+    </aside>
   </div>
 </main>
 
@@ -226,8 +214,7 @@
       <p><strong>Phone:</strong> <a href="tel:+918197777444" style="color:#4a3a00">+91 8197777444</a></p>
       <p><strong>Franchise Enquiry:</strong> <a href="https://wa.me/918197777444" style="color:#25D366;font-weight:600;">Connect via WhatsApp</a></p>
     </div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.868117410203!2d77.60307537411941!3d12.916196816092464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15cc54513f6f%3A0x696adb18f07bbecc!2sMANGALURU%20KAIRUCHI!5e0!3m2!1sen!2sin!4v1761885343484!5m2!1sen!2sin"
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.868117410203!2d77.60307537411941!3d12.916196816092464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15cc54513f6f%3A0x696adb18f07bbecc!2sMANGALURU%20KAIRUCHI!5e0!3m2!1sen!2sin!4v1761885343484!5m2!1sen!2sin"
       width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
@@ -252,7 +239,7 @@ const MENU=[
   {cat:'Starters',name:'Chicken Sukka',desc:'Spicy dry coastal chicken',price:240,img:'images/menu/chicken-sukka.jpg'},
   {cat:'Mains',name:'Prawns Curry',desc:'Tangy coconut gravy',price:310,img:'images/menu/prawns-curry.jpg'},
   {cat:'Mains',name:'Kane Rava Fry',desc:'Ladyfish fried in semolina crust',price:330,img:'images/menu/kane-fry.jpg'},
-  {cat:'Breads',name:'Appam (2  pcs)',desc:'Soft lace pancakes',price:90,img:'images/menu/appam.jpg'},
+  {cat:'Breads',name:'Appam (2 pcs)',desc:'Soft lace pancakes',price:90,img:'images/menu/appam.jpg'},
   {cat:'Beverages',name:'Filter Coffee',desc:'Authentic South Indian brew',price:60,img:'images/menu/filter-coffee.jpg'},
   {cat:'Desserts',name:'Tender Coconut Pudding',desc:'Chilled and creamy dessert',price:180,img:'images/menu/coconut-pudding.jpg'}
 ];
