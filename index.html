@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mangaluru Kairuchi — Coastal Food Restaurant</title>
+  <meta name="description" content="Mangaluru Kairuchi — Authentic coastal flavours from Mangaluru & Udupi: Neer Dosa, Chicken Gassi, Prawns Ghee Roast, Fish Fry, and more. Order now."/>
+  <meta name="theme-color" content="#ffd500"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#fffdf5;
+      --panel:#ffffff;
+      --muted:#fff8b3;
+      --border:#f3e29b;
+      --text:#2b2100;
+      --sub:#6a5e00;
+      --brand:#ffd500;
+      --brand-2:#e6bf00;
+      --accent:#ffb703;
+      --shadow:0 8px 25px rgba(255,213,0,0.25);
+      --radius:16px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;color:var(--text);background:linear-gradient(180deg,#fffef9 0%,#fff7c4 100%)}
+
+    .container{width:min(1200px,92%);margin-left:auto;margin-right:auto}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{text-align:left;display:flex;flex-direction:column;line-height:1.1}
+    .brand-name{font-family:'Pacifico',cursive;font-size:1.8rem;background:linear-gradient(90deg,#ffcc00,#ff8800);-webkit-background-clip:text;color:transparent;text-shadow:0 1px 1px rgba(0,0,0,0.1)}
+    .brand-sub{font-size:.8rem;color:var(--sub);letter-spacing:.5px;font-weight:500;margin-top:4px}
+
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .nav-links a{padding:10px 14px;border-radius:12px;color:var(--sub);font-weight:500;transition:.25s}
+    .nav-links a:hover,.nav-links a.active{color:var(--brand);background:var(--muted)}
+
+    .hamburger{display:none;flex-direction:column;justify-content:space-between;width:26px;height:18px;background:none;border:0;cursor:pointer}
+    .hamburger span{display:block;width:100%;height:2px;background-color:var(--brand);border-radius:1px}
+    @media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+    .mobile{display:none}
+    .mobile.open{display:block;border-top:1px solid var(--border);background:#fff}
+    .mobile a{display:block;padding:16px;font-size:16px;border-bottom:1px solid var(--border);color:var(--sub)}
+    .mobile a:hover{background:var(--muted);color:var(--brand)}
+
+    .hero{padding:60px 0}
+    .hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff8a0;color:#5a4700;font-weight:500;border:1px solid #ffe877}
+    h1{font-size:clamp(28px,5vw,52px);line-height:1.1;margin:16px 0 10px;color:#4a3a00}
+    .lead{font-size:clamp(15px,2.6vw,18px);color:var(--sub);max-width:62ch;line-height:1.7}
+    .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:14px;border:2px solid var(--brand);background:var(--brand);color:#000;font-weight:600;transition:all .2s;box-shadow:0 6px 14px rgba(255,213,0,.25)}
+    .btn:hover{transform:translateY(-3px);background:var(--brand-2)}
+    .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .btn.ghost:hover{background:#fffce0}
+    .btn.swiggy{background:#fc8019;border-color:#fc8019;color:#fff}.btn.zomato{background:#e23744;border-color:#e23744;color:#fff}
+
+    .hero-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow)}
+    .hero-img{aspect-ratio:4/3;border-radius:14px;overflow:hidden}
+
+    section{padding:60px 0}
+    .section-title{font-size:clamp(22px,3.4vw,34px);margin-bottom:12px;color:#4a3a00;text-align:center}
+    .section-sub{text-align:center;color:var(--sub);margin-bottom:24px}
+
+    .about{max-width:900px;margin-inline:auto;text-align:center;line-height:1.8}
+    .about p{margin-bottom:1rem;font-weight:400}
+    .founder{margin-top:2.5rem;display:flex;align-items:center;gap:24px;justify-content:center;flex-wrap:wrap}
+    .founder img{width:130px;height:130px;object-fit:cover;border-radius:50%;border:3px solid var(--brand);box-shadow:0 0 10px rgba(0,0,0,0.05)}
+    .founder-message{max-width:600px;text-align:left;color:var(--sub)}
+    .founder-message h3{margin-bottom:8px;color:#4a3a00;font-weight:600}
+
+    .filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px}
+    .filter{padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;font-weight:500;color:var(--sub);cursor:pointer;transition:.25s}
+    .filter.active,.filter:hover{background:#fff44f;color:#4a3a00;border-color:#e6be00}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .menu-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:0 3px 10px rgba(0,0,0,0.05)}
+    .thumb{width:90px;aspect-ratio:1;border-radius:12px;background:#fffde0;border:1px solid var(--border);overflow:hidden;flex-shrink:0}
+    .menu-card h3{margin:0;font-size:1rem;color:#4a3a00}
+    .menu-card div[style]{line-height:1.5}
+    .price{margin-left:auto;font-weight:700;color:#4a3a00}
+
+    footer{border-top:1px solid var(--border);background:#fff;padding:26px 0;text-align:center;color:var(--sub)}
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    @media(max-width:1024px){.hero-wrap{grid-template-columns:1fr}.menu-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.menu-grid{grid-template-columns:1fr}.hero-wrap{padding:34px 0}section{padding:44px 0}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-name">Mangaluru Kairuchi</div>
+        <div class="brand-sub">Authentic Coastal Restaurant</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div id="mobileNav" class="mobile">
+      <div class="container">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <span class="badge">🌞 Bright & Authentic</span>
+        <h1>Coastal Flavours from Mangaluru & Udupi.</h1>
+        <p class="lead">Taste the sunny spirit of Karnataka’s coast — from soft Neer Dosa to spicy Ghee Roasts and comforting Gassi.</p>
+        <div class="cta">
+          <a class="btn swiggy" href="#">Order on Swiggy</a>
+          <a class="btn zomato" href="#">Order on Zomato</a>
+          <a class="btn ghost" href="#menu">View Menu</a>
+        </div>
+      </div>
+      <aside class="hero-card"><div class="hero-img"><img src="images/hero-coastal.jpg" alt="Coastal ambience"></div></aside>
+    </div>
+  </main>
+
+  <section id="about" class="container about">
+    <h2 class="section-title">About Us</h2>
+    <p><strong>Mangaluru Kairuchi</strong> was born from a love for sunshine, spice, and the coast. Our kitchen celebrates the rich food traditions of Mangaluru and Udupi — where every dish carries the warmth of coconut, the aroma of roasted spices, and the comfort of home-style cooking. We handpick fresh ingredients daily to ensure authentic coastal taste in every bite.</p>
+    <p>Our signature dishes — from Ghee Roasts and Gassi to Sukka and Neer Dosa — are inspired by family recipes passed through generations. Every plate at Mangaluru Kairuchi tells a story of the sea breeze, temple kitchens, and the gentle rhythm of Mangaluru’s coastal life.</p>
+    <div class="founder">
+      <img src="images/founder.jpg" alt="Founder">
+      <div class="founder-message">
+        <h3>Founder’s Message</h3>
+        <p>“We didn’t just want to open another restaurant — we wanted to bring a piece of the coast to Bengaluru. Every meal here is cooked with heart, rooted in memory, and served with warmth. We invite you to experience not just food, but a feeling of home by the sea.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="container">
+    <h2 class="section-title">Menu</h2>
+    <p class="section-sub">Sunny coastal favourites (₹ prices)</p>
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="Starters">Starters</button>
+      <button class="filter" data-filter="Mains">Mains</button>
+      <button class="filter" data-filter="Breads">Breads & Dosa</button>
+      <button class="filter" data-filter="Beverages">Beverages</button>
+      <button class="filter" data-filter="Desserts">Desserts</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">Find your sunshine plate today!</p>
+    <div class="card" style="padding:20px;max-width:700px;margin:auto;border-radius:16px;box-shadow:0 5px 20px rgba(0,0,0,0.05);background:#fffef7">
+      <p><strong>Address:</strong> HSR Layout, Bengaluru 560102</p>
+      <p><strong>Hours:</strong> 12 PM – 11:30 PM (Daily)</p>
+      <p><strong>Phone:</strong> <a href="tel:+918197777444" style="color:#4a3a00">+91 8197777444</a></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!" width="100%" height="300" style="border:0;border-radius:12px;" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <a href="https://wa.me/918197777444" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <footer>© <span id="year"></span> Mangaluru Kairuchi — Made with ☀️ from the coast.</footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const burger=document.querySelector('.hamburger'),mobile=document.getElementById('mobileNav');
+    burger.addEventListener('click',()=>mobile.classList.toggle('open'));
+
+    const MENU=[
+      {cat:'Starters',name:'Prawns Ghee Roast',desc:'Byadagi chilli & jaggery hint',price:360,img:'images/menu/prawns-ghee-roast.jpg'},
+      {cat:'Mains',name:'Chicken Gassi',desc:'Coconut & spice curry',price:290,img:'images/menu/chicken-gassi.jpg'},
+      {cat:'Breads',name:'Neer Dosa (3 pcs)',desc:'Soft rice crêpes',price:130,img:'images/menu/neer-dosa.jpg'},
+      {cat:'Beverages',name:'Solkadhi',desc:'Kokum & Coconut',price:110,img:'images/menu/solkadhi.jpg'},
+      {cat:'Desserts',name:'Gud Payasa',desc:'Jaggery rice pudding',price:150,img:'images/menu/payasa.jpg'}
+    ];
+
+    const grid=document.getElementById('menuGrid');
+    function render(cat='all'){
+      grid.innerHTML='';
+      MENU.filter(i=>cat==='all'||i.cat===cat).forEach(i=>{
+        const el=document.createElement('div');
+        el.className='menu-card';
+        el.innerHTML=`<div class='thumb'><img src='${i.img}' alt='${i.name}'></div>
+          <div style='flex:1'><h3>${i.name}</h3><div style='color:var(--sub)'>${i.desc}</div></div>
+          <div class='price'>₹${i.price}</div>`;
+        grid.appendChild(el);
+      });
+    }
+    render();
+    document.querySelectorAll('.filter').forEach(btn=>btn.onclick=()=>{
+      document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  </script>
+</body>
+</html>
