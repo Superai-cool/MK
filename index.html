@@ -64,13 +64,36 @@
     .section-title{font-size:clamp(22px,3.4vw,34px);margin-bottom:12px;color:#4a3a00;text-align:center}
     .section-sub{text-align:center;color:var(--sub);margin-bottom:24px}
 
-    .about{max-width:900px;margin-inline:auto;text-align:center;line-height:1.8}
-    .about p{margin-bottom:1rem;font-weight:400}
-    .founder{margin-top:2.5rem;display:flex;align-items:center;gap:24px;justify-content:center;flex-wrap:wrap}
-    .founder img{width:130px;height:130px;object-fit:cover;border-radius:50%;border:3px solid var(--brand);box-shadow:0 0 10px rgba(0,0,0,0.05)}
-    .founder-message{max-width:600px;text-align:left;color:var(--sub)}
-    .founder-message h3{margin-bottom:8px;color:#4a3a00;font-weight:600}
+    /* --- Updated About Us layout --- */
+    .about {
+      max-width:1000px;
+      margin-inline:auto;
+      text-align:left;
+      line-height:1.8;
+      padding:20px 0;
+    }
+    .about p{margin-bottom:1rem;font-weight:400;color:var(--sub);}
+    .about .section-title, .about .section-sub{text-align:left;}
+    .founder{
+      margin-top:2rem;
+      display:flex;
+      align-items:center;
+      gap:24px;
+      justify-content:flex-start;
+      flex-wrap:wrap;
+    }
+    .founder img{
+      width:110px;
+      height:110px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid var(--brand);
+      box-shadow:0 0 10px rgba(0,0,0,0.05);
+    }
+    .founder-message{max-width:600px;text-align:left;color:var(--sub);}
+    .founder-message h3{margin-bottom:6px;color:#4a3a00;font-weight:600;}
 
+    /* Menu Section */
     .filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px}
     .filter{padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;font-weight:500;color:var(--sub);cursor:pointer;transition:.25s}
     .filter.active,.filter:hover{background:#fff44f;color:#4a3a00;border-color:#e6be00}
@@ -82,9 +105,7 @@
     .price{margin-left:auto;font-weight:700;color:#4a3a00}
 
     /* Contact Section */
-    #contact .section-title, #contact .section-sub {
-      text-align:left;
-    }
+    #contact .section-title, #contact .section-sub {text-align:left;}
     .contact-wrap {
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -203,13 +224,8 @@
     </div>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.868117410203!2d77.60307537411941!3d12.916196816092464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15cc54513f6f%3A0x696adb18f07bbecc!2sMANGALURU%20KAIRUCHI!5e0!3m2!1sen!2sin!4v1761885343484!5m2!1sen!2sin"
-      width="100%"
-      height="300"
-      style="border:0;border-radius:12px;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+      width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
@@ -218,43 +234,43 @@
 <footer>© <span id="year"></span> Mangaluru Kairuchi — Made with ☀️ from the coast.</footer>
 
 <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const burger=document.querySelector('.hamburger'),mobile=document.getElementById('mobileNav');
-  burger.addEventListener('click',()=>mobile.classList.toggle('open'));
+document.getElementById('year').textContent=new Date().getFullYear();
+const burger=document.querySelector('.hamburger'),mobile=document.getElementById('mobileNav');
+burger.addEventListener('click',()=>mobile.classList.toggle('open'));
 
-  const MENU=[
-    {cat:'Starters',name:'Prawns Ghee Roast',desc:'Byadagi chilli & jaggery hint',price:360,img:'images/menu/prawns-ghee-roast.jpg'},
-    {cat:'Mains',name:'Chicken Gassi',desc:'Coconut & spice curry',price:290,img:'images/menu/chicken-gassi.jpg'},
-    {cat:'Breads',name:'Neer Dosa (3 pcs)',desc:'Soft rice crêpes',price:130,img:'images/menu/neer-dosa.jpg'},
-    {cat:'Beverages',name:'Solkadhi',desc:'Kokum & Coconut',price:110,img:'images/menu/solkadhi.jpg'},
-    {cat:'Desserts',name:'Gud Payasa',desc:'Jaggery rice pudding',price:150,img:'images/menu/payasa.jpg'},
-    {cat:'Starters',name:'Fish Fry',desc:'Crispy seer fish fry',price:280,img:'images/menu/fish-fry.jpg'},
-    {cat:'Starters',name:'Chicken Sukka',desc:'Spicy dry coastal chicken',price:240,img:'images/menu/chicken-sukka.jpg'},
-    {cat:'Mains',name:'Prawns Curry',desc:'Tangy coconut gravy',price:310,img:'images/menu/prawns-curry.jpg'},
-    {cat:'Mains',name:'Kane Rava Fry',desc:'Ladyfish fried in semolina crust',price:330,img:'images/menu/kane-fry.jpg'},
-    {cat:'Breads',name:'Appam (2 pcs)',desc:'Soft lace pancakes',price:90,img:'images/menu/appam.jpg'},
-    {cat:'Beverages',name:'Filter Coffee',desc:'Authentic South Indian brew',price:60,img:'images/menu/filter-coffee.jpg'},
-    {cat:'Desserts',name:'Tender Coconut Pudding',desc:'Chilled and creamy dessert',price:180,img:'images/menu/coconut-pudding.jpg'}
-  ];
+const MENU=[
+  {cat:'Starters',name:'Prawns Ghee Roast',desc:'Byadagi chilli & jaggery hint',price:360,img:'images/menu/prawns-ghee-roast.jpg'},
+  {cat:'Mains',name:'Chicken Gassi',desc:'Coconut & spice curry',price:290,img:'images/menu/chicken-gassi.jpg'},
+  {cat:'Breads',name:'Neer Dosa (3 pcs)',desc:'Soft rice crêpes',price:130,img:'images/menu/neer-dosa.jpg'},
+  {cat:'Beverages',name:'Solkadhi',desc:'Kokum & Coconut',price:110,img:'images/menu/solkadhi.jpg'},
+  {cat:'Desserts',name:'Gud Payasa',desc:'Jaggery rice pudding',price:150,img:'images/menu/payasa.jpg'},
+  {cat:'Starters',name:'Fish Fry',desc:'Crispy seer fish fry',price:280,img:'images/menu/fish-fry.jpg'},
+  {cat:'Starters',name:'Chicken Sukka',desc:'Spicy dry coastal chicken',price:240,img:'images/menu/chicken-sukka.jpg'},
+  {cat:'Mains',name:'Prawns Curry',desc:'Tangy coconut gravy',price:310,img:'images/menu/prawns-curry.jpg'},
+  {cat:'Mains',name:'Kane Rava Fry',desc:'Ladyfish fried in semolina crust',price:330,img:'images/menu/kane-fry.jpg'},
+  {cat:'Breads',name:'Appam (2  pcs)',desc:'Soft lace pancakes',price:90,img:'images/menu/appam.jpg'},
+  {cat:'Beverages',name:'Filter Coffee',desc:'Authentic South Indian brew',price:60,img:'images/menu/filter-coffee.jpg'},
+  {cat:'Desserts',name:'Tender Coconut Pudding',desc:'Chilled and creamy dessert',price:180,img:'images/menu/coconut-pudding.jpg'}
+];
 
-  const grid=document.getElementById('menuGrid');
-  function render(cat='all'){
-    grid.innerHTML='';
-    MENU.filter(i=>cat==='all'||i.cat===cat).forEach(i=>{
-      const el=document.createElement('div');
-      el.className='menu-card';
-      el.innerHTML=`<div class='thumb'><img src='${i.img}' alt='${i.name}'></div>
-        <div style='flex:1'><h3>${i.name}</h3><div style='color:var(--sub)'>${i.desc}</div></div>
-        <div class='price'>₹${i.price}</div>`;
-      grid.appendChild(el);
-    });
-  }
-  render();
-  document.querySelectorAll('.filter').forEach(btn=>btn.onclick=()=>{
-    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    render(btn.dataset.filter);
+const grid=document.getElementById('menuGrid');
+function render(cat='all'){
+  grid.innerHTML='';
+  MENU.filter(i=>cat==='all'||i.cat===cat).forEach(i=>{
+    const el=document.createElement('div');
+    el.className='menu-card';
+    el.innerHTML=`<div class='thumb'><img src='${i.img}' alt='${i.name}'></div>
+      <div style='flex:1'><h3>${i.name}</h3><div style='color:var(--sub)'>${i.desc}</div></div>
+      <div class='price'>₹${i.price}</div>`;
+    grid.appendChild(el);
   });
+}
+render();
+document.querySelectorAll('.filter').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render(btn.dataset.filter);
+});
 </script>
 </body>
 </html>
