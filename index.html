@@ -82,16 +82,17 @@
       justify-content:flex-start;
       flex-wrap:wrap;
     }
-   .founder img {
-  width:130px;
-  height:130px;
-  object-fit:contain;     /* ensures full image fits */
-  border-radius:50%;
-  border:3px solid var(--brand);
-  background:#fff;        /* adds clean circular background */
-  padding:4px;            /* small inner margin */
-  box-shadow:0 0 10px rgba(0,0,0,0.05);
+ .founder img {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;             /* keeps full portrait proportion */
+  border-radius: 12px;           /* rounded rectangle */
+  border: 3px solid var(--brand);
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 
     .founder-message{max-width:600px;text-align:left;color:var(--sub);}
     .founder-message h3{margin-bottom:6px;color:#4a3a00;font-weight:600;}
